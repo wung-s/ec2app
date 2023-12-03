@@ -15,4 +15,5 @@ func main() {
 	log.Println("starting app")
 	http.HandleFunc("/", greet)
 	http.ListenAndServe(":80", nil)
+	log.Println("terminationg app")
 }
