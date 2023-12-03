@@ -14,6 +14,8 @@ func greet(w http.ResponseWriter, r *http.Request) {
 func main() {
 	log.Println("starting app")
 	http.HandleFunc("/", greet)
-	http.ListenAndServe(":80", nil)
+	if err := http.ListenAndServe(":80", nil); err != nil {
+		log.Fatal("failed to launch app", err)
+	}
 	log.Println("terminationg app")
 }
